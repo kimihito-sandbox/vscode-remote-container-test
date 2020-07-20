@@ -1,0 +1,8 @@
+{
+    "name": "api",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "api",
+    "workspaceFolder": "/workspace",
+    "extensions": ["golang.go"],
+    "shutdownAction": "none"
+}

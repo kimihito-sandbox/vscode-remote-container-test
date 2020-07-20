@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    image: golang:1.14
+    volumes:
+      - ./api:/workspace
+      - ~/.gitconfig:/root/.gitconfig
+    environment: 
+      - GO11MODULE=on
+    command: sleep infinity
+    ports:
+      - 3000:3000
+  
+  web:
+    image: node:lts
+    volumes:
+      - ./web:/workspace
+      - ~/.gitconfig:/root/.gitconfig
+    command: sleep infinity
+    ports:
+      - 1234:1234
+    links:
+      - api
